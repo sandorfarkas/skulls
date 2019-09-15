@@ -1,7 +1,9 @@
 BasicUpstart2(init)
 
         * = $4000 "Main Program"
-init: 	lda #$07
+init: 	
+		jsr $e544	// clear screen
+		lda #$07
 		sta $d020	// set background to 7
 		lda #%00000001
 		sta $d015  	// turn on sprite 0
